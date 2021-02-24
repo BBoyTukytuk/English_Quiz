@@ -8,8 +8,8 @@ const quiz = [
  answer:0
 },
 {
-  q:'Which one measures management efficiency in using assets to generate earnings? ',
-  options:['ROE','ROA','ROAC','ROAE'],
+  q:'最近发生了一件很奇怪的事 ',
+  options:['A stranger thing happened recently.','A strange thing happened recently.','A thing happened strange recently.','A strange things happen recently.'],
   answer:1
  },
  {
