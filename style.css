@@ -48,12 +48,12 @@ body{
     display: none;
 }
 
-.home-box h3{
-font-size: 18px;
-color: #000000;
+.home-box h1{
+color: #009688;
+font-size: 30px;
 font-weight: 500;
 margin-bottom:15px;
-line-height: 25px;
+line-height: 50px;
 
 }
 
@@ -112,6 +112,7 @@ font-weight: 400;
     padding: 20px 0;
     margin: 0;
 }
+
 .quiz-box .question-text img{
     max-width: 100%;
     display: block;
@@ -205,7 +206,6 @@ animation: slideInLeft .5s ease forwards;
     border-radius: 50%;
     margin-right: 3px;
     margin-top: 15px;
-    
 
 }
 
@@ -298,9 +298,9 @@ background-color: red;
     .btn:hover {
         background-color:  #009688;
      }
-     .btn:active {
+    .btn:active {
         background-color: orange;
-        box-shadow: 0 5px gray;
+        box-shadow: 0 5px orange;
         transform: translateY(2px);
      }
     
@@ -310,21 +310,3 @@ background-color: red;
     width: 100px;
     white-space: nowrap;
 }
-
-/* heads up display*/
-
-#hud {
-    display: flex;
-    justify-content: space-between;
-}
-
-.hud-prefix{
-    text-align: right;
-    font-size: 20px;
-
-}
-
-.hud-main-text{
-    text-align: right;
-}
-
