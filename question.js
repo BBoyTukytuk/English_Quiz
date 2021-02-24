@@ -13,13 +13,13 @@ const quiz = [
   answer:1
  },
  {
-  q:'Does GAAP refer to financial accounting principles that are compulsory in all countries around the globe?',
-  options:['True','false'],
+  q:'Alex虽然不够聪明，但是很努力。',
+  options:['Alex is clever, but he is not hard working.','Alex is not clever, but he is hard working.'],
   answer:1
  },
  {
-  q:'The Balance Sheet shows the balance of?',
-  options:['Total fixed assets vs Total Equity',' Current assets vs Current Liabilities', 'Assets vs Liabilities and Equity'],
+  q:'这个比赛对我来说很重要',
+  options:['This competition is too important for me',' This competition was very important', 'This competition is very important to me'],
   answer:2
  },
  {
