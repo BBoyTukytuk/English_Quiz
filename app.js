@@ -8,8 +8,6 @@ const homeBox = document.querySelector(".home-box");
 const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
 const contactBox = document.querySelector(".contact-box");
-const scoreText = document.querySelector('#score');
-
 
 
 
@@ -20,10 +18,6 @@ let availableQuestions = [];
 let availableOptions = [];
 let correctAnswers = 0;
 let attempt = 0;
-let score = 0
-
-const SCORE_POINTS = 100
-
 
 function sendMail(params) {
     var tempParams = {
@@ -60,17 +54,6 @@ function getNewQuestion(){
    const index1= availableQuestions.indexOf(questionIndex);
    // remove the questionIndex from the availableQuestion Array so that the question does not repeat
    availableQuestions.splice(index1,1);
-   // show question img if 'img' property exists
-   if(currentQuestion.hasOwnProperty("img")){
-       const img = document.createElement("img");
-       img.src = currentQuestion.img;
-       questionText.appendChild(img);
-
-
-
-   }
-
-
    
    // set options
    // get the length of options
@@ -116,7 +99,6 @@ function getResult(element){
         updateAnswerIndicator("correct");
         correctAnswers++;
         
-        
     }
     else{
           // set the red to the incorrect option
@@ -129,9 +111,6 @@ function getResult(element){
           for(let i=0; i<optionLen; i++){
               if(parseInt(optionContainer.children[i].id) === currentQuestion.answer){
                 optionContainer.children[i].classList.add("correct");
-            if(classToApply === "correct") {
-                    incrementScore(SCORE_POINTS)
-                }
               }
             }
 
@@ -139,10 +118,7 @@ function getResult(element){
         attempt++;
         unclickableOptions();
 
-
-        
 }
-    
 // make all the options unclickable once the user selects an option (RESTRICT THE USE TO CHANGE THE OPTION)
 function unclickableOptions(){
     const optionLen = optionContainer.children.length;
@@ -178,21 +154,6 @@ function next(){
     }
 
 }
-
-
-const score_points = 0
-if(id === currentQuestion.answer){
-incrementScore=(score_points)
-}
-
-incrementScore = num => {
-    score+=num
-    scoreText.innerText = score
-}
-
-
-
-
 
 function quizOver(){
 //hide quiz Box
