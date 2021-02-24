@@ -3,12 +3,12 @@
 //Array of Objects
 const quiz = [
 {
- q:'你别着急，一定会有办法的',
+ q:'你别着急，一定会有办法的。',
  options:['Do not worry. There must be some solutions.','Do not worry about solutions.','Solutions are not to worry.','Do not worry. Where are the solutions.'],
  answer:0
 },
 {
-  q:'最近发生了一件很奇怪的事 ',
+  q:'最近发生了一件很奇怪的事。 ',
   options:['A stranger thing happened recently.','A strange thing happened recently.','A thing happened strange recently.','A strange things happen recently.'],
   answer:1
  },
@@ -18,19 +18,19 @@ const quiz = [
   answer:1
  },
  {
-  q:'这个比赛对我来说很重要',
-  options:['This competition is too important for me',' This competition was very important', 'This competition is very important to me'],
+  q:'这个比赛对我来说很重要。',
+  options:['This competition is too important for me.',' This competition was very important.', 'This competition is very important to me.'],
   answer:2
  },
  {
-  q:'What does NPV stand for?',
-  options:['Net Profit Value','Net Present Variable', 'Net Profit Variable','Net Present Value'],
+  q:'要保持均衡饮食和适量的运动。',
+  options:['Balance your diet and plenty of exercise.','Eat a balanced diet and with plenty exercise.', 'Eat some balanced diet and get plenty of exercise.','Eat a balanced diet and get plenty of exercise.'],
   answer:3
  },
   {
-  q:'Which is the worst type of variable cost?',
-  options:['Economies of scale', 'Diseconomies of scale'],
+  q:'你会如何描述这张图片呢？',
+  options:['This is a wonderful family and I hope they will be together soon.', 'This is my wonderful family and I hope we will be together again soon.'],
   answer:1,
-  img:'https://user-images.githubusercontent.com/63485300/106611537-70ba4280-65ab-11eb-8ea8-a53fef9b255a.jpg' 
+  img:'https://user-images.githubusercontent.com/63485300/108956234-bfdb2b00-76b2-11eb-88e4-c5f629fea1b5.png' 
  },
 ]
