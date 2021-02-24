@@ -3,8 +3,8 @@
 //Array of Objects
 const quiz = [
 {
- q:'Which one is not a financial statement?',
- options:['Profit and Gains Statement','Cashflow Statement','Balance Sheet','Income Statement'],
+ q:'请翻译成英文 = "你别着急，一定会有办法的"',
+ options:['Do not worry. There must be some solutions.','Do not worry about solutions.','Solutions are not to worry','Do not worry. Where are the solutions'],
  answer:0
 },
 {
