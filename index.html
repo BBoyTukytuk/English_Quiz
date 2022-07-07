@@ -19,7 +19,7 @@
     </script>
 </head>
 <body>
-    
+
 <div class="home-box custom-box ">
       <h1>Quiz For Tony</h1>
       <h1>请翻译成英文 </h1>
@@ -34,34 +34,17 @@
     </div>
     <div class="option-container">
     </div>
+    <div class="audio-container">
+        <audio controls id="audio">
+          <source id="audioSource" type="audio/mpeg">
+          Your browser does not support the audio tag.
+        </audio>
+    </div>
     <div class="next-question-btn">
         <button type="button" class="btn" onclick="next()">Next</button>
     </div>
     <div class="answers-indicator">
     </div>
-</div>
-
-<div class="contact-box custom-box hide">
-    <h1>Contact</h1>
-    <table>
-        <tr>
-            <td class="lbl"><label for="name">Name:</label></td>
-            <td> <textarea rows="1" cols="25" id="toName" placeholder="Enter name"></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td class="lbl"><label for="email">Email:</label></td>
-            <td><textarea rows="1" cols="25" id="fromName" placeholder="Enter email"></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td class="lbl"><label for="message">Message:</label></td>
-            <td><textarea rows="3" cols="25" id="msg" placeholder="Enter your message"></textarea>
-            </td>
-        </tr>
-    </table>   
-    <button type="button" class="btn"onclick="sendMail()">Send</button>
-    <button type="button" class="btn" onclick="quizOver()">Result</button>
 </div>
 
 <div class="result-box custom-box hide">
