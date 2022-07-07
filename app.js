@@ -1,4 +1,4 @@
-
+//http-server
 
 const questionNumber = document.querySelector(".question-number");
 const questionText = document.querySelector(".question-text");
@@ -8,9 +8,8 @@ const homeBox = document.querySelector(".home-box");
 const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
 const contactBox = document.querySelector(".contact-box");
-
-
-
+// const is used to define a new variable in JavaScript.
+// document.querySelector lets you find html elements and returns the first element based on the tag you parse
 
 let questionCounter = 0;
 let currentQuestion;
@@ -19,21 +18,32 @@ let availableOptions = [];
 let correctAnswers = 0;
 let attempt = 0;
 
+//let allows you to declare variables that are limited to the scope of a block statement, like loops
+
+//The document.getElementById() method returns the element of specified id.
+//EmailJS? It allows sending email directly from Javascript, with no backend development.
+//emailjs.send(serviceID, templateID, templateParams, userID) this is filled up by tempParams
+
 function sendMail(params) {
     var tempParams = {
         from_name:document.getElementById("fromName").value,
         to_name:document.getElementById("toName").value,
         message:document.getElementById("msg").value,
-    
     };
-    
+
     emailjs.send('service_15kvtnh','template_vhf4oaf',tempParams)
     .then(function(res){
         console.log("success", res.status);
     })
     }
 
+//The console. log() method outputs a message to the web console.
+
+
 //push the questions into availableQuestions Array
+//function myFunction(parameters if needed)
+//Variables defined with const cannot be Redeclared.
+//The push() method adds new items to the end of an array in question.js so you go through the list of questions
 function setAvailableQuestions(){
     const totalQuestion = quiz.length;
     for(let i=0; i<totalQuestion; i++){
@@ -41,33 +51,54 @@ function setAvailableQuestions(){
     }
 }
 // set question number and question and options
+//innerhtml allows Javascript code to manipulate a website being displayed.
 function getNewQuestion(){
    // set question number
    questionNumber.innerHTML = " Question " + (questionCounter + 1) + " of " + quiz.length;
 
    //set question text
    // get random question
+   //Math.floor = returns the largest integer less than or equal to a given number.
+   //Math.random = returns an number greater that zero but below the desired range by multiplying the range
    const questionIndex = availableQuestions[Math.floor(Math.random() * availableQuestions.length)]
    currentQuestion = questionIndex;
    questionText.innerHTML = currentQuestion.q;
-   // get the position of questionIndex from the availableQuestion Array;
+
+   // get the position of the random question from the availableQuestion Array using questionIndex;
+   //indexOf searches the string, and returns the index of the first occurrence of the specified substring
    const index1= availableQuestions.indexOf(questionIndex);
-   // remove the questionIndex from the availableQuestion Array so that the question does not repeat
+
+   // The splice() method adds and/or removes array elements from the availableQuestion Array stopping repeat
+   //availableQuestions.splice(At position 1, remove 1 element)
    availableQuestions.splice(index1,1);
-    
-       // show question img if 'img' property exists
+
+       //hasOwnProperty() method returns a boolean true or false if it has an "img"
+       //show question img if 'img' property exists in question,js
+       // True = creates an element which is the current question number.img
    if(currentQuestion.hasOwnProperty("img")){
        const img = document.createElement("img");
        img.src = currentQuestion.img;
+       img.alt = currentQuestion.alt;
        questionText.appendChild(img);
-
-
-
    }
-   
+
+    const audio_div = document.querySelector(".audio-container")
+
+    audio_div.onclick = function(e) {
+      e.preventDefault(); //prevents loading forever
+
+      var elm = e.target;
+      var audio = document.getElementById('audio');
+      var source = document.getElementById('audioSource');
+      source.src = currentQuestion.audio_mp3;
+
+      audio.load(); //call this to just preload the audio without playing
+      audio.play(); //call this to play the song right away
+    };
+
    // set options
    // get the length of options
-   const optionLen = currentQuestion.options.length 
+   const optionLen = currentQuestion.options.length
    // push options into availableOptions Array
    for(let i=0; i<optionLen; i++){
        availableOptions.push(i)
@@ -75,7 +106,7 @@ function getNewQuestion(){
    }
    optionContainer.innerHTML = '';
    let animationDelay = 0.15;
-   // create options in html
+   // create options in html that are in random order
    for(let i=0; i<optionLen; i++){
        // random option
        const optionIndex = availableOptions[Math.floor(Math.random() * availableOptions.length)];
@@ -93,22 +124,22 @@ function getNewQuestion(){
        option.setAttribute("onclick","getResult(this)");
    }
 
-
-
    questionCounter++
 }
 
 // get the result of the current attempt question
 function getResult(element){
     const id = parseInt(element.id);
+    // parseInt() function parses a string argument and returns an integer 
     // get the answer by comparing the id of clicked option
     if(id === currentQuestion.answer){
         // set the green to the correct option
+        //element.classList.add is used for adding one or more classes to the CSS element.
         element.classList.add("correct");
         // add the indicator to the correct mark
         updateAnswerIndicator("correct");
         correctAnswers++;
-        
+
     }
     else{
           // set the red to the incorrect option
@@ -181,7 +212,7 @@ function quizResult(){
     resultBox.querySelector(".total-wrong").innerHTML = attempt - correctAnswers;
     const percentage = (correctAnswers/quiz.length)*100;
     resultBox.querySelector(".percentage").innerHTML = percentage.toFixed(2) + "%";
-    resultBox.querySelector(".total-score").innerHTML = correctAnswers + " / " +quiz.length; 
+    resultBox.querySelector(".total-score").innerHTML = correctAnswers + " / " +quiz.length;
 }
 
 function resetQuiz(){
@@ -193,7 +224,7 @@ function resetQuiz(){
 function tryAgainQuiz(){
    // hide the resultBox
    resultBox.classList.add("hide");
-   // show the quizBox 
+   // show the quizBox
    quizBox.classList.remove("hide");
    resetQuiz();
    startQuiz();
@@ -209,10 +240,6 @@ function goToContact(){
 
 
 }
-
-//#### STARTING POINT ####
-
-
 
 function startQuiz(){
 
