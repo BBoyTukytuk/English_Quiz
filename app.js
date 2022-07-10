@@ -199,7 +199,6 @@ function next(){
 function quizOver(){
 //hide quiz Box
 quizBox.classList.add("hide");
-contactBox.classList.add("hide");
 //show result box
 resultBox.classList.remove('hide');
 quizResult();
